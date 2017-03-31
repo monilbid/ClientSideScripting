@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tutorial Example</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <script src="parallax.js"></script>
+    </head>
+    <body>
+        <div id="parallax_div">
+            <div id="bg_div"></div>
+            <div id="mid_div"></div>
+            <div id="fore_div"></div>
+        </div>
+        
+        <script>
+            "use strict";
+            
+            var ParObj = new MakeParallaxFW();
+            var ParDiv = ParObj.MakeParallax({
+                id: "parallax_div",
+                backgroundDiv: "bg_div",
+                middlegroundDiv: "mid_div",
+                foregroundDiv: "fore_div"
+            });
+        </script>
+    </body>
+</html>

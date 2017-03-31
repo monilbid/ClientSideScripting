@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<!--
+Author: Monil Bid
+Date created: 01/25/2017
+Date last modified: 01/25/2017
+Topic: Tourism web site for Uganda
+Class: CIS 4350 - Client Side Scripting for the Web
+Instructor: Sally Kyvernitis
+File Name: labs.html
+Description: This web page contains a blog of all the labs that I have worked on during the class.
+-->
+<html>
+    <head>
+        <title>Labs | Visit Uganda</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="shortcut icon" href="pics/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="pics/favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="styles.css">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+    </head>
+    <body ng-app>
+        <div ng-include="'top.html'"></div>
+
+        <div id="content">
+            <h1 id="title">Blogs</h1>
+
+            <div class="blog">
+                <h3><a href="http://cis-linux2.temple.edu/~sallyk/cis3344/01_homepage/3344%20Home%20Page%20Lab.pdf">Lab 1 – Home Page</a></h3>
+                <p>HTML and CSS are pretty straight-forward and easy languages to learn. There are plenty of resources on the web to use which makes the learning much easer.</p>
+                <p>The advanced CSS techniques that I employed in this lab are <i>rounded-corners</i> and <i>box-shadows.</i> I used both of these techniques on the image of Kampala in my Home (index) page.</p>
+                <p>The new thing that I learned in this lab is how to use AngularJS to simply implement code from a file instead of retyping/ copying and pasting it in every single file. This makes it much easier to implement a template for the website.</p>
+                <p><a href="01_Layout/index.html">01_Layout</a></p>
+            </div>
+            <br>
+            <div class="blog">
+                <h3><a href="02_AdvLayout/index.html">Lab 2 – Advanced Layout</a></h3>
+                <p>In this lab we used CSS to make the website responsive. This lab taught me a lot about the different features of CSS that allow me to change the way my website would look in different screen sizes.</p>
+                <p>What I found difficult was the balance between adding styles to the mobile website and the desktop website. Sometimes you could change something in the mobile version which has a negative impact on the desktop version.</p>
+                <p>I also used JQuery to manage my navigation bar. This is a new technique which is pretty handy.</p>
+                <p>The easy aspect of this lab was the form. I simply had to use all the different required form tags in my form.</p>
+            </div>
+            <br>
+            <div class="blog">
+                <h3><a href="03_JSIntro/index.html">Lab 3 & 4 – Intro to JavaScript and Advanced JavaScript</a></h3>
+                <p>In this lab we did object oriented programming using JavaScript. It taught me how to reuse code instead of coding again for each use.</p>
+                <p>It was difficult to find the technicalities of JavaScript when trying to refer to functions or change a few elements.</p>
+                <p>JavaScript is a great language to make a website more visually aesthetic for a user.</p>
+            </div>
+            <br>
+            <div class="blog">
+                <h3>Lab 5 – Database</h3>
+                <p>In this lab we created two tables in the database, namely: &quot;user_t&quot; and &quot;bestselling_novels&quot;</p>
+                <p>We added entries in each table manually using the MySQL IDE.</p>
+            </div>
+            <br>
+            <div class="blog">
+                <h3>Lab 6 – Web API</h3>
+                <p><a href="06_WebAPI/webApi.jsp">I created a webApi.jsp page which calls the database and lists the contents of the bestseller_novels table in the JSON format.</a></p>
+                <p><a href="06_WebAPI/testApiDomJs.html">To display the data in a visually aesthetic manner I use HTML. Click here to go to the JavaScript (only) version of searching for books.</a></p>
+                <p><a href="06_WebAPI/testApiDomJq.html">Or click here to go to the JQuery version of searching for books.</a></p>
+            </div>
+            <br>
+            <div class="blog">
+                <h3><a href="tutorial/index.html">Tutorial</a></h3>
+                <p>I created a tutorial on the left-right parallax effect using three layers: background, middleground, and foreground.</p>
+                <p>An example of my tutorial can be found <a href="tutorial/example.html">here</a>.</p>
+            </div>
+        </div>
+
+        <div ng-include="'bottom.html'"></div>
+    </body>
+</html>

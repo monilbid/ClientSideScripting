@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Code Example 2</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        Check the console for the values of Left for div 2.
+        <div id="div_1">
+            <div id="div_2"></div>
+        </div>
+        <script>
+            document.addEventListener("mousemove", function(event){
+                var div_2 = document.getElementById("div_2");
+                var div_1 = div_2.parentNode;
+                
+                var container_width = div_1.offsetWidth;
+                console.log("Left Value:");
+                console.log(div_2.offsetLeft - ((((parseInt(event.clientX) - parseInt(div_2.offsetWidth)) / 2 + parseInt(div_2.offsetLeft)) / container_width) * 10) + "px");
+            });
+        </script>
+    </body>
+</html>

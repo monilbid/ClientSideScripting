@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="../styles.css">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+        <style>
+            td {
+                border-color: white;
+                border-style: solid;
+                border-width: 1px;
+                text-align: center;
+                padding: 10px;
+                max-width: 200px;
+            }
+        </style>
+    </head>
+    <body ng-app>
+        <div ng-include="'../top.html'"></div>
+
+        <br>
+        <h1 style="margin-left: 10px;">Best Selling Novels</h1>
+        <div style="margin-left: 20px; margin-bottom: 60px;">
+            <div id="user_input">
+                <p>
+                    Type the title of a best selling novel to view its details:&nbsp;
+                    <input type="text" id="book_search" value="" style="width:150px;">
+                    <input type="button" value="Search" id="search_button">
+                </p>
+
+                <table id="results" style="display: none;">
+                </table>
+            </div>
+
+            <div id="book_list"></div>
+        </div>
+
+        <div ng-include="'../bottom.html'"></div>
+
+        <script>
+            $(document).ready(function ()
+            {
+
+                $('#search_button').click(function sendRequest()
+
+                {
+                    $('#results').html("");
+
+                    var url = "http://cis-linux2.temple.edu:8080/sp17_3344_1_tuf70921/06_WebAPI/webApi.jsp";
+
+                    url += "?q=" + $("#book_search").val();
+
+                    ajaxSuccess = function (response) {
+                        var obj = eval(response);
+
+                        if (obj.dbError == null) {
+                            $("#book_list").html("Search is currently unavailable.");
+                            return;
+                        }
+
+                        if (obj.dbError.length > 0) {
+                            $("#book_list").html("Error: " + obj.dbError);
+                            return;
+                        }
+
+                        if (parseInt(obj.listSize) == 0) {
+                            $("#book_list").html("No Books Match Your Search");
+                            return;
+                        }
+
+                        var table_headers = "<tr><td>Title</td><td>Image</td><td>Author</td><td>ISBN</td><td>Year Published</td><td>Price</td></tr>";
+
+                        $('#results').append(table_headers);
+
+                        var return_string = "";
+
+                        var numCountries = parseInt(obj.recordList.length);
+                        for (i = 0; i < numCountries; i++) {
+                            return_string += "<tr><td>" + obj.recordList[i].title + "</td><td><img src='" + obj.recordList[i].image_url + "'></td><td>" + obj.recordList[i].author + "</td><td>" + obj.recordList[i].isbn + "</td><td>" + obj.recordList[i].year_published + "</td><td>" + obj.recordList[i].price + "</td></tr>";
+
+                        }
+
+                        $('#results').append(return_string);
+
+                        $("#results").show();
+                    };
+
+                    ajaxError = function () {
+                        alert("Unable to retrieve data.");
+                    };
+
+                    //The ajax call...
+                    $.ajax(
+                            {
+                                type: "GET",
+                                cache: false,
+                                url: url,
+                                dataType: "json",
+                                timeout: 500, // 500 milliseconds
+                                success: ajaxSuccess,
+                                error: ajaxError
+                            }); //end of $.ajax
+
+                }); // end of click function
+
+            }); // end of document ready function
+        </script>
+    </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--
+Author: Monil Bid
+Date created: 01/25/2017
+Date last modified: 01/25/2017
+Topic: Tourism web site for Uganda
+Class: CIS 4350 - Client Side Scripting for the Web
+Instructor: Sally Kyvernitis
+File Name: labs.html
+Description: This web page contains a blog of all the labs that I have worked on during the class.
+-->
+<html>
+    <head>
+        <title>Labs | Visit Uganda</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="pics/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="pics/favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="styles.css">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+    </head>
+    <body ng-app>
+        <div ng-include="'top.html'"></div>
+
+        <div id="content">
+            <h1 id="title">Blogs</h1>
+            <div class="blog">
+                <h3><a href="http://cis-linux2.temple.edu/~sallyk/cis3344/01_homepage/3344%20Home%20Page%20Lab.pdf">Lab 1 – Home Page</a></h3>
+                <p>HTML and CSS are pretty straight-forward and easy languages to learn. There are plenty of resources on the web to use which makes the learning much easer.</p>
+                <p>The advanced CSS techniques that I employed in this lab are <i>rounded-corners</i> and <i>box-shadows.</i> I used both of these techniques on the image of Kampala in my Home (index) page.</p>
+                <p>The new thing that I learned in this lab is how to use AngularJS to simply implement code from a file instead of retyping/ copying and pasting it in every single file. This makes it much easier to implement a template for the website.</p>
+                <p><a href="01_Layout/index.html">01_Layout</a></p>
+            </div>
+        </div>
+
+        <div ng-include="'bottom.html'"></div>
+    </body>
+</html>

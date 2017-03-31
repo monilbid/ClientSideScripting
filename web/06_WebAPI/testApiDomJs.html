@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="../styles.css">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+
+        <style>
+            td {
+                border-color: white;
+                border-style: solid;
+                border-width: 1px;
+                text-align: center;
+                padding: 10px;
+                max-width: 200px;
+            }
+        </style>
+    </head>
+    <body ng-app>
+        <div ng-include="'../top.html'"></div>
+        <br>
+        <h1 style="margin-left: 10px;">Best Selling Novels</h1>
+        <div style="margin-left: 20px; margin-bottom: 60px;">
+            <div id="user_input">
+                <p>
+                    Type the title of a best selling novel to view its details:&nbsp;
+                    <input type="text" id="book_search" value="" style="width:150px;">
+                    <input type="button" value="Search" onClick="sendRequest()">
+                </p>
+
+                <table id="results" style="display: none;">
+                </table>
+            </div>
+            
+            <div id="book_list"></div>
+        </div>
+
+        <div ng-include="'../bottom.html'"></div>
+
+        <script>
+            //Make the XMLHttpRequest Object
+            var httpReq;
+            if (window.XMLHttpRequest) {
+                httpReq = new XMLHttpRequest();  //For Firefox, Safari, Opera
+            } else if (window.ActiveXObject) {
+                httpReq = new ActiveXObject("Microsoft.XMLHTTP");         //For IE 5+
+            } else {
+                alert('ajax not supported');
+            }
+
+            function $(element) {
+                return document.getElementById(element);
+            }
+
+            function sendRequest() {
+                var url = "http://cis-linux2.temple.edu:8080/sp17_3344_1_tuf70921/06_WebAPI/webApi.jsp";
+                url += "?q=" + $("book_search").value;
+                //alert("url is " + url);
+                httpReq.open("GET", url);
+                httpReq.onreadystatechange = handleResponse;
+                httpReq.send(null);
+            }
+
+            function handleResponse() {
+                //alert('handling response');
+                if (httpReq.readyState == 4 && httpReq.status == 200) {
+
+                    var response = httpReq.responseText;
+                    //alert("response text is " + response);
+
+                    // wrap the json in parentheses to avoid tripping over javascript ambiguity...
+                    response = "(" + response + ")";
+                    var obj = eval(response);
+
+                    if (obj.dbError == null) {
+                        $("book_list").innerHTML = "Search is currently unavailable.";
+                        return;
+                    }
+
+                    if (obj.dbError.length > 0) {
+                        $("book_list").innerHTML = "Error: " + obj.dbError;
+                        return;
+                    }
+
+                    if (parseInt(obj.listSize) == 0) {
+                        $("book_list").innerHTML = "No Books Match Your Search";
+                        return;
+                    }
+                    
+                    var num_books = parseInt(obj.recordList.length);
+
+                    var return_string = "<tr>" +
+                        "<td>Title</td>" +
+                        "<td>Image</td>" +
+                        "<td>Author</td>" +
+                        "<td>ISBN</td>" +
+                        "<td>Year Published</td>" +
+                        "<td>Price</td>" +
+                    "</tr>";
+
+                    for (i = 0; i < num_books; i++) {
+                        return_string += "<tr>";
+                        return_string += "<td>";
+                        return_string += obj.recordList[i].title;
+                        return_string += "</td><td>";
+                        return_string += "<img src='";
+                        return_string += obj.recordList[i].image_url;
+                        return_string += "'></td><td>";
+                        return_string += obj.recordList[i].author;
+                        return_string += "</td><td>";
+                        return_string += obj.recordList[i].isbn;
+                        return_string += "</td><td>";
+                        return_string += obj.recordList[i].year_published;
+                        return_string += "</td><td>";
+                        return_string += obj.recordList[i].price;
+                        return_string += "</td>";
+                        return_string += "</tr>";
+                    }
+
+                    $("results").innerHTML = return_string;
+                    $("results").style.display = "block";
+
+
+                }
+            }
+        </script>
+    </body>
+</html>

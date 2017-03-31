@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<!--
+Author: Monil Bid
+Date created: 02/05/2017
+Date last modified: 02/05/2017
+Topic: Tourism web site for Uganda
+Class: CIS 4350 - Client Side Scripting for the Web
+Instructor: Sally Kyvernitis
+File Name: index.html
+Description: This web page uses a single-page and responsive web design.
+-->
+<html>
+    <head>
+        <title>Responsive and Single Page Design</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+
+            body {
+                background-color: #3e2b3f;
+                color: white;
+                margin: 0px;
+                padding: 0px;
+                font-family: "Arial";
+            }
+
+            .page {
+                min-height: 100vh;
+                margin-left: 20px;
+                margin-right: 20px;
+            }
+
+            #navBar {
+                width: 100%;
+            }
+
+            #nav {
+                margin-top: 0px; 
+                position:fixed;
+                background-color: #2D1F2E;
+                top:0px;
+                right:0px;
+                padding: 10px;
+                font-size:18px;
+                font-weight:bold;
+                z-index:1;
+                margin-right:0px;
+                border-bottom-left-radius: 10px;
+            }
+
+            #nav li {
+                display:inline;
+                margin-left:10px;
+            }
+
+            #nav a {
+                text-decoration: none;
+                color: white;
+            }
+
+            #nav a:hover {
+                color: cornsilk;
+            }
+
+            #nav a:active {
+                color: darkgoldenrod;
+            }
+
+            #footer {
+                width: 100%;
+                right: 0;
+                left: 0;
+                bottom: 0;
+                background-color: #2D1F2E;
+                padding: 15px;
+                text-align: center;
+            }
+
+            .title {
+                font-size: 28px;
+                margin-left: 20px;
+            }
+
+            #tourist_list li {
+                padding: 3px;
+            }
+
+            .container {
+                width: 100%;
+            }
+
+            .responsive {
+                width: 100%;
+                height: 100vh;
+            }
+
+            img {
+                width: 100%;
+                border-radius: 10px;
+            }
+
+            #navIcon {
+                padding-top: 0px;
+                margin-top: 0px;
+                float: right;
+                font-size: 30px;
+                position: fixed;
+                margin-left: 15px;
+            }
+
+            #navIcon:hover {
+                color: cornsilk;
+            }
+
+            #nav {
+                display: none;
+            }
+            
+            input {
+                width: 100%;
+            }
+            
+            textarea {
+                width: 100%;
+            }
+
+            @media screen and (min-width: 600px) {
+                .responsive {
+                    width: 32.3%;
+                    float: left;
+                    padding: 5px 15px;
+                    margin: 0px 0.5%;
+                }
+
+                img {
+                    width: 100%;
+                    border-radius: 10px;
+                }
+
+                #navIcon {
+                    display: none;
+                }
+
+                #nav {
+                    display: block;
+                }
+
+                .navLink {
+                    display: inline;
+                    padding-left: 20px;
+                }
+            }
+        </style>
+
+
+    </head>
+    <body>
+        <div id="navBar">
+            <div id="navIcon">
+                ☰
+            </div>
+            <div id="nav">
+                <div class="navLink"><a href="#page_1">Home</a></div>
+                <div class="navLink"><a href="#page_2">Information</a></div>
+                <div class="navLink"><a href="#page_3">Form</a></div>
+                <div class="navLink"><a href="../index.html">Main Page</a></div>
+            </div>
+        </div>
+
+        <div class="page" id="page_1">
+            <div class="title">Tourist Attractions in Uganda</div>
+            <p>
+                The landlocked country of Uganda is located in East Africa and is bordered by Kenya, Sudan, the Democratic Republic of Congo, Tanzania and Rwanda. The country is famous throughout the world because of the presence of the gigantic Lake Victoria in its Southern region. Winston Churchill famously labeled Uganda as the ‘Pearl of Africa’. The country offers some of the most breathtaking wildlife terrain in the world. Uganda’s most famous tourist places include the Ajai Game Reserve, the Bwindi Impenetrable National Park, the Mgahinga Gorilla National Park, the Kidepo Valley National Park, the Murchison Falls National Park, the Queen Elizabeth National Park, the Kibale Forest National Park, the Rwenzori National Park and the serene Ssese Islands among others. Here in this article we have compiled a list of some of the top 10 best tourist places in Uganda that must be on your list if you are planning a tour to this wonderful country.
+            </p>
+            <ol id="tourist_list">
+                <li>Bwindi Impenetrable National Park, South western Uganda</li>
+                <li>Murchison Falls National Park, North western Uganda</li>
+                <li>Rwenzori Mountains National Park, South west Uganda</li>
+                <li>Lake Victoria, South east Uganda</li>
+                <li>Lake Mburo National Park, Western Uganda</li>
+                <li>Kampala, Uganda</li>
+                <li>Ssese Islands, Lake Victoria, Uganda</li>
+                <li>Kasubi Tombs, Kampala, Uganda</li>
+                <li>Queen Elizabeth National Park, Western Uganda</li>
+                <li>Kidepo Valley National Park, Karamoja region, Uganda</li>
+            </ol>
+        </div>
+
+        <div class="page" id="page_2">
+            <div class="container">
+                <div class="title">Images And Descriptions of Tourist Attractions</div>
+
+                <div class="responsive">
+                    <h3>Bwindi Impenetrable National Park, South western Uganda</h3>
+                    <img src="pics/bwindi_image.jpg">
+                    <p>The Bwindi Impenetrable National Park, a UNESCO World Heritage Site and one of the top 10 best tourist places in Uganda is located in south-western Uganda. The park is one of the richest ecosystems anywhere in the world with many different species of birds and mammals. At present there are 120 different species of mammals, around 350 species of birds, more than 200 different species of butterflies and many more endangered species. The park is also home to the Colobus Monkeys, the Bwindi Gorillas and Chimpanzees. The park lies in a remote area and travelling to the area is hard task because of the poor condition of the roads.</p>
+                </div>
+
+                <div class="responsive">
+                    <h3>Murchison Falls National Park, North western Uganda</h3>
+                    <img src="pics/murchison_image.jpg">
+                    <p>The Murchison Falls National Park also known as the Kabarega National Park is located in north-western Uganda. The park is well known for its amazing wildlife despite being ravaged by poachers. The park is home to four of the big five’s; Buffalos, Elephants, Lions and Leopards. The park was also home to Rhinos but they became extinct due to poaching and hunting during the sixties and the seventies. However Rhinos are again being bred to be introduced in the park. Other animals that are present in the park include Hippopotamus, Giraffes, Antelopes, Uganda Kob, Hartebeest and Oribi.</p>
+                </div>
+
+                <div class="responsive">
+                    <h3>Rwenzori Mountains National Park, South west Uganda</h3>
+                    <img src="pics/rwenzori_image.jpg">
+                    <p>The Rwenzori Mountains National Park, a UNESCO World Heritage Site is situated in the Rwenzori Mountains in southwest Uganda. The park is famous for its amazing plant life; it is dotted with waterfalls, many small lakes and glaciers. Eco-tourism is rapidly increasing in the park.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="page" id="page_3">
+            <div class="container">
+                <div class="title">Contact Us</div>
+                <br><br>
+                <form name="myForm" method="post" action="http://www.temple.edu/cgi-bin/mail?tuf70921@temple.edu">
+                    <fieldset>
+                        <legend>Please Fill in the Form Below</legend>
+                        
+                        <label>First Name *</label>
+                        <input type="text" name="first_name" required="" placeholder="Monil">
+                        <br>
+                        <br>
+                        <label>Last Name *</label>
+                        <input type="text" name="last_name" required="" placeholder="Bid">
+                        <br>
+                        <br>
+                        <label>Email *</label>
+                        <input type="email" name="email" required="" placeholder="abc@gmail.com">
+                        <br>
+                        <br>
+                        <label>Phone Number</label>
+                        <input type="number" name="phone_number" placeholder="2672319401">
+                        <br>
+                        <br>
+                        <label>Is this your first time contacting us?</label>
+                        <input type="checkbox" name="first_time">
+                        <br>
+                        <br>
+                        <label>What college year are you in?</label>
+                        <select>
+                            <option name="freshman">Freshman</option>
+                            <option name="sophomore">Sophomore</option>
+                            <option name="junior">Junior</option>
+                            <option name="senior">Senior</option>
+                        </select>
+                        <br>
+                        <br>
+                        <label>Gender</label><br>
+                        Male<input type="radio" name="gender">
+                        Female<input type="radio" name="gender">
+                        <br>
+                        <br>
+                        <label>Your Query *</label>
+                        <textarea name="query" rows="3" required=""></textarea>
+                        <br>
+                        <br>
+                        <input type="submit" value="Submit">
+                    </fieldset>
+                </form>
+            </div>
+
+        </div>
+
+        <div id="footer">
+            Website created by Monil Bid
+        </div>
+
+        <script>
+            $(document).ready(function () {
+                $("#navIcon").click(function () {
+                    $(this).next().toggle();
+                });
+
+                $(window).resize(function () {
+                    var wide = $('#navBar').css("width");
+                    wide = parseInt(wide);
+                    if (wide >= 600) {
+                        jQuery('#nav').css("display", "block");
+                    } else {
+                        jQuery('#nav').css("display", "none");
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>

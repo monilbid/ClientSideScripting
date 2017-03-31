@@ -1,0 +1,114 @@
+/* 
+Author: Monil Bid
+Date created: 01/25/2017
+Date last modified: 01/29/2017
+Topic: Tourism web site for Uganda
+Class: CIS 4350 - Client Side Scripting for the Web
+Instructor: Sally Kyvernitis
+File Name: styles.css
+Description: This style sheet contains all the styling elements that are on the website.
+*/
+
+body {
+    background-color: #3e2b3f;
+    margin: 0px;
+    padding: 0px;
+    font-family: "Arial";
+    color: white;
+}
+
+#kampala_image {
+    margin-left: 10px;
+    width: 400px;
+    height: auto;
+    border-radius: 10px;
+    float: left;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    box-shadow: 5px 5px 5px #888888;
+}
+
+#title {
+    text-align: center;
+}
+
+#navList {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #2D1F2E;
+}
+
+.navLink {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    float:left;
+}
+
+li a:hover {
+    background-color: #222;
+}
+
+li a:active {
+    background-color: #000;
+}
+
+#footer {
+    position: fixed;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: #2D1F2E;
+    padding: 15px;
+    text-align: center;
+}
+
+p {
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+#poa_link {
+    color: white;
+
+}
+
+#poa_link:hover {
+    color: beige;
+}
+
+.blog{
+    padding: 10px;
+    background-color: #503E50;
+}
+
+.blog h3 {
+    margin: 15px;
+}
+
+.blog a {
+    text-decoration: none;
+    color: white;
+}
+
+.blog a:hover {
+    color: beige;
+    text-decoration: underline;
+}
+
+#content {
+    margin-bottom: 50px;
+}
+
+.parallax a {
+    color: white;
+}
+
+.parallax a:hover {
+    color: beige;
+    text-decoration: underline;
+}

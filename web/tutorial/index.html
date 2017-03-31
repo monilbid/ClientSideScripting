@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Parallax Tutorial</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="../styles.css">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+
+        <style>
+            #container {
+                margin-left: 10px;
+                margin-bottom: 50px;
+            }
+
+            pre {
+                background-color: #8B788C;
+            }
+            
+        </style>
+    </head>
+    <body ng-app>      
+
+        <div ng-include="'../top.html'"></div>
+        <div id="container" class="parallax">
+            <h1>Horizontal Parallax Effect</h1>
+
+            <div>
+                <h2><u>Introduction and Overview</u></h2>
+                <p>The parallax effect is a way to make a website more aesthetically pleasing.</p>
+                <p>In the general parallax effect there are two layers, the background and the foreground. On scrolling through a web page you view the foreground image move over the background image, hence causing a parallax effect.</p>
+                <p><a href="https://www.w3schools.com/howto/tryhow_css_parallax_demo.htm" target="_blank">Here is an example of a general parallax effect.</a></p>
+            </div>
+            
+            <div>
+                <h2><a href="example.html" target="_blank">View an Example of the Parallax Here</a></h2>
+                <h2><a href="Parallax.zip">Downlad the Zipped File of the framework JavaScript file and an example HTML file as a guide.</a></h2>
+            </div>
+
+            <div>
+                <h2><u>Instructions</u></h2>
+                <p>First create a div and give it an ID. This will be the container div for the parallax.</p>
+                <p>Secondly, create three divs inside the first div and give them IDs. These will be the background layer, middleground layer, and foreground layer respectively.</p>
+                <p>Now add the following code in the <i>head</i> of the code:</p>
+                <pre>
+                &lt;script src='parallax.js'&gt;&lt;/script&gt;
+                </pre>
+                <p>Now let's create an object of the framework. Type the following code right before the end of the body tag:</p>
+                <pre>
+                &lt;script&gt;
+                    var ParallaxObject = new MakeParallaxFW();
+                    var ParDiv = ParallaxObject.MakeParallax({
+                        id: "<i>div_id_here</i>",
+                        backgroundDiv: "<i>background_div_id</i>",
+                        middlegroundDiv: "<i>middleground_div_id</i>",
+                        foregroundDiv: "<i>foreground_div_id</i>"
+                    });
+                &lt;/script&gt;
+                </pre>
+                <p>You can add more properties to the parallax framework. The options are listed in the next section.</p>
+            </div>
+            
+            <div>
+                <h2><u>Options for Instantiation</u></h2>
+                <p>In my version of the parallax effect I will use an event listener for <strong>mousemove</strong> to change the position of images in the three layers horizontally.</p>
+                <p>You can supply the following details when creating an object of the parallax:</p>
+                <ul>
+                    <li><strong>id</strong> - The ID of the container div for the parallax <strong>[required]</strong></li>
+                    <li><strong>backgroundDiv</strong> - The div containing the background image <strong>[required]</strong></li>
+                    <li><strong>middlegroundDiv</strong> - The div containing the midlleground image <strong>[required]</strong></li>
+                    <li><strong>foregroundDiv</strong> - The div containing the foreground image <strong>[required]</strong></li>
+                    <li><strong>backgroundUrl</strong> - The URL to the background image</li>
+                    <li><strong>middlegroundUrl</strong> - The URL to the middleground image</li>
+                    <li><strong>foregroundUrl</strong> - The URL to the foreground image</li>
+                    <li><strong>backgroundImgWidth</strong> - The width of the background image</li>
+                    <li><strong>middlegroundImgWidth</strong> - The width of the middleground image</li>
+                    <li><strong>foregroundImgWidth</strong> - The width of the foreground image</li>
+                    <li><strong>backgroundLeft</strong> - The <i>left</i> position of the background image</li>
+                    <li><strong>backgroundTop</strong> - The <i>top</i> position of the background image</li>
+                    <li><strong>middlegroundLeft</strong> - The <i>left</i> position of the middleground image</li>
+                    <li><strong>middlegroundTop</strong> - The <i>top</i> position of the middleground image</li>
+                    <li><strong>foregroundLeft</strong> - The <i>left</i> position of the foreground image</li>
+                    <li><strong>foregroundTop</strong> - The <i>top</i> position of the foreground image</li>
+                    <li><strong>bg_speed</strong> - The speed at which the background image should move on <i>mousemove</i></li>
+                    <li><strong>mid_speed</strong> - The speed at which the middleground image should move on <i>mousemove</i></li>
+                    <li><strong>fore_speed</strong> - The speed at which the foreground image should move on <i>mousemove</i></li>
+                </ul>
+            </div>
+
+            <div>
+                <h2><u>Public Methods</u></h2>
+                <p>The following are the public methods that can be implemented on an object of parallax:</p>
+
+                <ul>
+                    <li><strong>setBackgroundImage(newImg)</strong> - Set the background image to a new image which will be passed as a parameter (<i>newImg</i>)</li>
+                    <li><strong>setMiddlegroundImage(newImg)</strong> - Set the middleground image to a new image which will be passed as a parameter (<i>newImg</i>)</li>
+                    <li><strong>setForegroundImage(newImg)</strong> - Set the foreground image to a new image which will be passed as a parameter (<i>newImg</i>)</li>
+                    <li><strong>setBackgroundSpeed(newSpeed)</strong> - Set the speed at which the background image moves to the new speed which will be passed as a parameter (<i>newSpeed</i>)</li>
+                    <li><strong>setMiddlegroundSpeed(newSpeed)</strong> - Set the speed at which the middleground image moves to the new speed which will be passed as a parameter (<i>newSpeed</i>)</li>
+                    <li><strong>setForegroundSpeed(newSpeed)</strong> - Set the speed at which the foregrounf image moves to the new speed which will be passed as a parameter (<i>newSpeed</i>)</li>
+                </ul>
+            </div>
+
+            <div>
+                <h2><u>More about the Code</u></h2>
+
+                <h3>How to obtain mouse location</h3>
+                <p>The code uses an event listener to obtain the mouse location any time the cursor has been moved. This is how the event listener is implemented:</p>
+                <pre>
+                obj.addEventListener("mousemove", function(){
+                    // Do something here
+                });
+                </pre>
+                <p><a href="code_example1.html" target="_blank">Click here to view the function in action</a></p>
+                <br>
+
+                <h3>How to move the images on mouse move</h3>
+                <p>The code allows the user to type the speed at which each layer can move, or uses default values. The speed is multiplied by the result of the following calculation:<br> <i>left - ((mouse_location - ((offset_width_of_image / 2) + image_horizontal_location)) / offset_width_of_parent_object) * speed</i><br>This is implemented in the framework in the following way:</p>
+                <pre>
+                function onMouseMove(id, left, mouseX, speed){
+                    var parallax_object = document.getElementById(id);
+                    var parent_object = parallax_object.parentNode;
+                    var container_width = parent_object.offsetWidth;
+
+                    parallax_object.style.left = left - (((mouseX - parallax_object.offsetWidth) / 2 + left)) / container_width) * speed) + "px";
+                }
+                </pre>
+                <p><a href="code_example2.html" target="_blank">Click here to view the function in action</a></p>
+                <br>
+                
+                <h3>How to set default values when not provided during instantiation</h3>
+                <p>The code allows the user to not provide values for all types of parameters by using default values when a value has not been provided. Default values are set in the following manner:</p>
+                <pre>
+                var backgroundUrl = params.backgroundUrl || "images/blue.png";
+                var middlegroundUrl = params.middlegroundUrl || "images/sun.png";
+                var foregroundUrl = params.foregroundUrl || "images/cloud.png";
+                </pre>
+                <p><a href="code_example3.html" target="_blank">Click here to view how the background image is automatically set without one being provided. View, copy, and modify the source code to add a different image using the parameters</a></p>
+            </div>
+            
+            <div>
+                <h2><u>Finally</u></h2>
+                <p>This tutorial can be used for anyone who is interested in adding a fluid layout with three layers on their web page. It allows the user to implement various types of designs and better UI.</p>
+            </div>
+
+            <div>
+                <h2><u>References</u></h2>
+                <p><a href="https://www.w3schools.com/howto/howto_css_parallax.asp" target="_blank">W3-Schools Parallax Demo.</a> I got an idea on how the parallax effect works.</p>
+                <p><a href="https://tympanus.net/codrops/2016/05/03/animated-heat-distortion-effects-webgl/" target="_blank">Codrops Tutorial.</a> Learned how the Mouse Motion and Moving Layers works.</p>
+                <p><a href="http://materializecss.com/parallax.html" target="_blank">Materialize Parallax Framework.</a> Learned how to create a professional framework.</p>
+            </div>
+        </div>
+        <div ng-include="'../bottom.html'"></div>
+    </body>
+</html>

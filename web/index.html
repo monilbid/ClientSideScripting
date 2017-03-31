@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--
+Author: Monil Bid
+Date created: 01/25/2017
+Date last modified: 01/29/2017
+Topic: Tourism web site for Uganda
+Class: CIS 4350 - Client Side Scripting for the Web
+Instructor: Sally Kyvernitis
+File Name: index.html
+Description: This web page contains the home page and links to different pages on the web site.
+-->
+<html>
+    <head>
+        <title>Visit Uganda</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="pics/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="pics/favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="styles.css">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+    </head>
+    <body ng-app>
+        <div ng-include="'top.html'"></div>
+
+        <div id="content">
+            <h1 id="title">Uganda Tourism</h1>
+            <img src="pics/kampala_image.jpg" id="kampala_image">
+            <p>
+                “The Pearl of Africa” is synonymous with Uganda.<br>
+                Winston Churchill dubbed Uganda “The Pearl of Africa” in 1907 while just a young Member of Parliament, saying:<br><br>
+                “The kingdom of Uganda is a fairy-tale. You climb up … and at the end there is a wonderful new world. The scenery is different, the vegetation is different, the climate is different, and, most of all, the people are different from anything elsewhere to be seen in the whole range of Africa … I say: ‘Concentrate on Uganda’. For magnificence, for variety of form and colour, for profusion of brilliant life – bird, insect, reptile, beast – for vast scale — Uganda is truly the pearl of Africa.”<br><br>
+                Uganda is endowed with plentiful natural resources, a vast diversity of wildlife and a varied geography. Situated on the equator where the West African Jungle meets the East African Savannah in the African Great Lakes region with several major lakes including a large portion of Lake Victoria, it has a tropical climate with plentiful rainfall and fertile land. The snow-capped Rwenzori Mountains in the southeast are considered by some to be the source of the Nile.<br><br>
+                There are 60 protected areas, including 10 national parks, where you can observe 330 species of mammals and over 1000 species of birds including many of the popular animals we associate with Africa including Lions, Elephants, Rhinoceros, Hippopotamus, Giraffes, Gorillas and Chimpanzees.<br><br>
+                Agriculture and fishing play a major role in the livelihood of the people, with export crops including coffee, cotton and tobacco. Among Uganda’s natural resources there are significant mineral deposits as well as mostly untapped reserves of crude oil.<br><br>
+                About the size of the state of Oregon, Uganda has a population of 35 million. The Capitol City of Kampala (pop. 2.5 million) and Entebbe (pop. 80,000), with its international airport, as well as most of the larger cities, are located in the southern Lake Shore region of Lake Victoria. There are 10 major indigenous ethnic groups speaking 40 languages. The official language is English. 85% of the people are Christian, largely Catholic and Anglican.<br><br>
+                <br>                                
+                <a href="http://pearlofafrica.tv/the-pearl-of-africa/" id="poa_link"><u>This introduction was obtained from PearlOfAfrica.tv</u></a>
+            </p>
+        </div>
+
+        <div ng-include="'bottom.html'"></div>
+    </body>
+</html>
