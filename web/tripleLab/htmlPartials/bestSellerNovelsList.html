@@ -1,0 +1,27 @@
+<h1 id='title'>Best Seller Novels</h1>
+
+<div class="center_div">
+    <p>Search: <input ng-model="query" type="text"></p>
+    <p><a href="#insertNovel">Insert New Novel</a></p>
+</div>
+
+<table align="center" class="big_table">
+    <tr>
+        <th><a href="" ng-click="sortField = 'id'; reverse = ! reverse">ID</a></th>
+        <th><a href="" ng-click="sortField = 'title'; reverse = ! reverse">Title</a></th>
+        <th><a href="" ng-click="sortField = 'image_url'; reverse = ! reverse">Image</a></th>
+        <th><a href="" ng-click="sortField = 'author'; reverse = ! reverse">Author</a></th>
+        <th><a href="" ng-click="sortField = 'isbn'; reverse = ! reverse">ISBN</a></th>
+        <th><a href="" ng-click="sortField = 'year_published'; reverse = ! reverse">Year Published</a></th>
+        <th><a href="" ng-click="sortField = 'price'; reverse = ! reverse">Price</a></th>
+    </tr>
+    <tr ng-repeat="book in books | filter:query | orderBy:sortField:reverse">
+        <td>{{book.id}}</td>
+        <td>{{book.title}}</td>
+        <td><img src="{{book.image_url}}" alt="{{book.title}}"></td>
+        <td>{{book.author}}</td>
+        <td>{{book.isbn}}</td>
+        <td>{{book.year_published}}</td>
+        <td>{{book.price}}</td>
+    </tr>
+</table>

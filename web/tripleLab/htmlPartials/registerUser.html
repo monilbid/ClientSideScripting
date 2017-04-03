@@ -1,0 +1,28 @@
+<h1 id='title'>Register</h1>
+
+<table align="center" class="small_table">
+    <tr>
+        <td>Username</td>
+        <td><input type="text" ng-model="newuser.user_name"></td>
+        <td class="fieldError">{{myErrors.user_name}}</td>
+    </tr>
+    <tr>
+        <td>Password</td>
+        <td><input type="password" ng-model="newuser.user_password"></td>
+        <td class="fieldError">{{myErrors.user_password}}</td>
+    </tr>
+    <tr>
+        <td>Email</td>
+        <td><input type="email" ng-model="newuser.user_email"></td>
+        <td class="fieldError">{{myErrors.user_email}}</td>
+    </tr>
+    <tr>
+        <td>Role</td>
+        <td><input type="text" ng-model="newuser.user_role"></td>
+        <td class="fieldError">{{myErrors.user_role}}</td>
+    </tr>
+</table>
+
+<div class="center_div">
+    <input type="button" value="Create User" data-ng-click="insertSave()">
+</div>

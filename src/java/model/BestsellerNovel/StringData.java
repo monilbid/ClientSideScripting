@@ -11,4 +11,20 @@ public class StringData {
     public String price = "";
     
     public String errorMsg = ""; //If an error occurs, it will be stored here.
+
+    public int getCharacterCount() {
+        String s = this.id + this.title + this.image_url + this.author + this.isbn + this.year_published + this.price;
+        return s.length();
+    }
+    
+    @Override
+    public String toString() {
+        return "id:" + this.id
+                + ", title:" + this.title
+                + ", image_url:" + this.image_url
+                + ", author:" + this.author
+                + ", isbn:" + this.isbn
+                + ", year_published:" + this.year_published
+                + ", price:" + this.price;
+    }
 }

@@ -45,10 +45,10 @@ public class DbConn {
                 this.conn = DriverManager.getConnection(url);
 
             } catch (Exception e) { // cant get the connection
-                this.errMsg = "problem getting connection:" + e.getMessage();
+                this.errMsg = "problem getting connection: " + e.getMessage();
             }
         } catch (Exception e) { // cant get the driver...
-            this.errMsg = "problem getting driver:" + e.getMessage();
+            this.errMsg = "problem getting driver: " + e.getMessage();
         }
     } // method
 

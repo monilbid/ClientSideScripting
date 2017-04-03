@@ -1,0 +1,20 @@
+<h1 id='title'>User List</h1>
+<div class="center_div">
+    <h3><a href="#register">Register New User</a></h3>
+</div>
+<table align="center" class="big_table">
+    <tr>
+        <th>ID</th>
+        <th>Username</th>
+        <th>Email</th>
+        <th>Password</th>
+        <th>Role</th>
+    </tr>
+    <tr ng-repeat="user in users">
+        <td>{{user.id}}</td>
+        <td>{{user.user_name}}</td>
+        <td>{{user.user_email}}</td>
+        <td>{{user.user_password}}</td>
+        <td>{{user.user_role}}</td>
+    </tr>
+</table>

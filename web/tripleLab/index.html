@@ -1,11 +1,108 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <title>Angular Triple Lab</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link href="../styles.css" rel="stylesheet" type="text/css" />
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.1/angular.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.10/angular-route.min.js"></script>
+        
+        <script src="js/app.js"></script>
+        <script src="js/route.js"></script>
+        <script src="js/getBestSellerNovelsList.js"></script>
+        <script src="js/getUserList.js"></script>
+        <script src="js/insertUser.js"></script>
+        <script src="js/insertBestSellerNovel.js"></script>
+        
+        <style>
+            #contentArea {
+                margin: 10px;
+            }
+            
+            .big_table {
+                border-collapse: collapse;
+                width: 90%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+            .big_table, th, td{
+                border: 1px solid white;
+                text-align: center;
+            }
+            
+            .small_table {
+                border-collapse: collapse;
+                width: 50%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+            .small_table th, td{
+                padding-top: 10px;
+                padding-bottom: 10px;
+                border: 1px solid white;
+                text-align: center;
+            }
+            
+            .small_table input {
+                width: 80%;
+            }
+            
+            .fieldError {
+                border-right: none;
+                border-top: none;
+                border-bottom: none;
+            }
+            
+            td {
+                max-width: 200px;
+            }
+            
+            td img{
+                max-height: 100px;
+            }
+            
+            a {
+                color: white;
+            }
+            
+            a:hover {
+                color: beige;
+            }
+            
+            .center_div{
+                margin: auto;
+                width: 50%;
+                margin-bottom: 10px;
+                margin-top: 10px;
+                text-align: center;
+            }
+            
+            
+            
+           
+        </style>
     </head>
-    <body>
-        <div>TODO write content</div>
+
+    <body ng-app="myApp">
+        <div id="nav">
+            <ul id='navList'>
+                <li><a href="#home" class="navLink">Home</a></li>
+                <li><a href="#users" class="navLink">Users</a></li>
+                <li><a href="#register" class="navLink">Register</a></li>
+                <li><a href="#" class="navLink">Log On</a></li>
+                <li><a href="#" class="navLink">Log Off</a></li>
+                <li><a href="#" class="navLink">Labs</a></li>
+            </ul>
+        </div>
+
+        
+
+        <div style='clear:both'></div>
+        <div ng-view="" id='contentArea'></div>
     </body>
 </html>
