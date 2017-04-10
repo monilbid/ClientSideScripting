@@ -1,4 +1,4 @@
-myapp.controller('RegisterUserCtrl', function ($scope, $http, MService) {
+myapp.controller('RegisterUserCtrl', function ($scope, $http, $location, MService) {
     console.log("RegisterUserCtrl");
     
     $scope.newuser = MService.emptyUser();
@@ -25,6 +25,7 @@ myapp.controller('RegisterUserCtrl', function ($scope, $http, MService) {
                     if ($scope.myErrors.errorMsg.length === 0) {
                         $scope.status = "Person Sucessfully Inserted";
                     }
+                    $location.path('#/users');
                 },
                 function (response) { // this function will run if http.get error
                     console.log("Person Insert/Save ajax error");

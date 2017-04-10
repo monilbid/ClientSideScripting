@@ -1,0 +1,43 @@
+<h1 id='title'>Update {{book.title}}</h1>
+
+<table align="center" class="small_table">
+    <tr>
+        <td>ID</td>
+        <td>{{book.id}}</td>
+        <td class="fieldError">{{myErrors.id}}</td>
+    </tr>
+    <tr>
+        <td>Title</td>
+        <td><input type="text" ng-model="book.title"></td>
+        <td class="fieldError">{{myErrors.title}}</td>
+    </tr>
+    <tr>
+        <td>Image URL</td>
+        <td><input type="text" ng-model="book.image_url"></td>
+        <td class="fieldError">{{myErrors.image_url}}</td>
+    </tr>
+    <tr>
+        <td>Author</td>
+        <td><input type="text" ng-model="book.author"></td>
+        <td class="fieldError">{{myErrors.author}}</td>
+    </tr>
+    <tr>
+        <td>ISBN</td>
+        <td><input type="text" ng-model="book.isbn"></td>
+        <td class="fieldError">{{myErrors.isbn}}</td>
+    </tr>
+    <tr>
+        <td>Year Published</td>
+        <td><input type="text" ng-model="book.year_published"></td>
+        <td class="fieldError">{{myErrors.year_published}}</td>
+    </tr>
+    <tr>
+        <td>Price</td>
+        <td><input type="text" ng-model="book.price"></td>
+        <td class="fieldError">{{myErrors.price}}</td>
+    </tr>
+</table>
+
+<div class="center_div">
+    <input type="button" value="Update Novel" data-ng-click="updateSave()">
+</div>

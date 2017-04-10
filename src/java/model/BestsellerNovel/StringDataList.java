@@ -50,5 +50,9 @@ public class StringDataList {
             this.dbError = "List Level Error in model.CountryFlag.StringDataList Constructor: " + e.getMessage();
         }
     } // method
+    
+    public void add(StringData stringData) {
+        this.recordList.add(stringData);
+    }
 
 } // class

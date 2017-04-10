@@ -20,6 +20,18 @@ myapp.config(function ($routeProvider) {
                 templateUrl: 'htmlPartials/insertNovel.html',
                 controller: 'InsertBestSellerNovelCtrl'
             }).
+            when('/updateNovel/:id', {
+                templateUrl: 'htmlPartials/updateBestSellerNovel.html',
+                controller: 'UpdateBestSellerNovelCtrl'
+            }).
+            when('/novelDetails/:id', {
+                templateUrl: 'htmlPartials/viewBestSellerNovelDetails.html',
+                controller: 'BestSellerNovelDetailsCtrl'
+            }).
+            when('/deleteNovel/:id', {
+                templateUrl: 'htmlPartials/bestSellerNovelsList.html',
+                controller: 'DeleteBestSellerNovelCtrl'
+            }).
             otherwise({
                 redirectTo: '/'
             });

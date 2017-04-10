@@ -1,4 +1,4 @@
-myapp.controller('InsertBestSellerNovelCtrl', function ($scope, $http, MService) {
+myapp.controller('InsertBestSellerNovelCtrl', function ($scope, $http, $location, MService) {
     console.log("InsertBestSellerNovelCtrl");
     
     $scope.newbook = MService.emptyNovel();
@@ -25,6 +25,7 @@ myapp.controller('InsertBestSellerNovelCtrl', function ($scope, $http, MService)
                     if ($scope.myErrors.errorMsg.length === 0) {
                         $scope.status = "Novel Sucessfully Inserted";
                     }
+                    $location.path('#/');
                 },
                 function (response) { // this function will run if http.get error
                     console.log("Novel Insert/Save ajax error");

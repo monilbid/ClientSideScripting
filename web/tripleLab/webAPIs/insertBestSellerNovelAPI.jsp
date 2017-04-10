@@ -19,7 +19,7 @@
         System.out.println("jsonInsertData is " + jsonInsertData);
         errorMsgs.errorMsg = dbc.getErr();
         if(errorMsgs.errorMsg.length() == 0){
-            System.out.println("insertUserAPI.jsp ready to insert");
+            System.out.println("insertBestSellerNovelAPI.jsp ready to insert");
             StringData insertData = gson.fromJson(jsonInsertData, StringData.class);
             errorMsgs = TableModifications.insert(insertData, dbc);
         }
