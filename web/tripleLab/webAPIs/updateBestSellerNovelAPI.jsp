@@ -19,9 +19,12 @@
 
     if (jsonUpdateData == null) {
         errorMsgs.errorMsg = "Cannot update -- no data was received";
-    } else {
-
-        errorMsgs.errorMsg = dbc.getErr();
+    } else if (session.getAttribute("login") != null) {
+        if(session.getAttribute("login").equals("false")){
+            System.out.println("Not logged in");
+            errorMsgs.errorMsg = "User not logged in";
+        } else {
+            errorMsgs.errorMsg = dbc.getErr();
         if (errorMsgs.errorMsg.length() == 0) { // means db connection is ok
 
             System.out.println("updateBestSellerNovel.jsp ready to update from this data: "
@@ -40,6 +43,9 @@
             System.out.println("++++++++++++++++++++++++++++++++++++++++");
             System.out.println("updateBestSellerNovelAPI error: " + errorMsgs.errorMsg);
         }
+        }
+    }else {
+        System.out.println("Error. Session wasn't found.");
     }
     out.print(gson.toJson(errorMsgs).trim());
 

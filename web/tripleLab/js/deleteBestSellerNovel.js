@@ -9,6 +9,7 @@ myapp.controller('DeleteBestSellerNovelCtrl', function ($scope, $http, $routePar
                 console.log(response);
                 console.log("");
                 $scope.deleteMsg = response.data.errorMsg;
+                $scope.status = response.data.errorMsg;
                 if ($scope.deleteMsg.length === 0) {
                     $scope.deleteMsg = "Sucessfully deleted person " + $routeParams.id;
                 } else {

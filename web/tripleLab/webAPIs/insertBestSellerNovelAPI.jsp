@@ -15,7 +15,11 @@
     if(jsonInsertData == null){
         errorMsgs.errorMsg = "Cannot insert -- no data was received";
         System.out.println(errorMsgs.errorMsg);
-    } else {
+    } else if(session.getAttribute("login") != null){
+        if(session.getAttribute("login").equals("false")){
+            errorMsgs.errorMsg = "User not logged in";
+        }
+    }else {
         System.out.println("jsonInsertData is " + jsonInsertData);
         errorMsgs.errorMsg = dbc.getErr();
         if(errorMsgs.errorMsg.length() == 0){

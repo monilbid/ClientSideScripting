@@ -1,0 +1,15 @@
+<div class="center_div">
+    <h1 id="title">Log On</h1>
+    
+    Email Address:&nbsp;&nbsp;
+    <input type="email" ng-model="user.user_email" ng-init="user.user_email = 'monil.bid@temple.edu'">
+    <span>{{myErrors.user_email}}</span>
+    <br><br>
+    Password:&nbsp;&nbsp;
+    <input type="password" ng-model="user.user_password" ng-init="user.user_password = 'password123'">
+    <span>{{myErrors.user_password}}</span>
+    <br><br>
+    <input type="button" value="Log On" data-ng-click="logon()">
+    <br><br>
+    {{status}}
+</div>

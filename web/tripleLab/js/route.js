@@ -32,6 +32,14 @@ myapp.config(function ($routeProvider) {
                 templateUrl: 'htmlPartials/bestSellerNovelsList.html',
                 controller: 'DeleteBestSellerNovelCtrl'
             }).
+            when('/logon', {
+                templateUrl: 'htmlPartials/logon.html',
+                controller: 'LogonCtrl'
+            }).
+            when('/logoff', {
+                templateUrl: 'htmlPartials/bestSellerNovelsList.html',
+                controller: 'LogoffCtrl'
+            }).
             otherwise({
                 redirectTo: '/'
             });

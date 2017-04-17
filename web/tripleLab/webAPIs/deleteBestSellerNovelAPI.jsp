@@ -20,9 +20,13 @@
     StringData book = new StringData();
     
     book.errorMsg = "";
-
+    
     if (deleteId == null) {
         book.errorMsg = "Cannot delete -- no id was received";
+    } else if (session.getAttribute("login") != null){
+        if(session.getAttribute("login").equals("false")){
+            book.errorMsg = "User not Logged In"; 
+        }
     } else {
         book.errorMsg = dbc.getErr();
         if (book.errorMsg.length() == 0) { // means db connection is ok

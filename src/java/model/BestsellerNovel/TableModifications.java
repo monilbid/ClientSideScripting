@@ -28,13 +28,25 @@ public class TableModifications {
                 PrepStatement pStatement = new PrepStatement(dbc, sql);
                 
                 pStatement.setString(1, userData.title);
-                pStatement.setString(2, userData.image_url);
+                if(userData.image_url.equals("")){
+                    pStatement.setString(2, "");
+                } else {
+                    pStatement.setString(2, userData.image_url);
+                }
                 pStatement.setString(3, userData.author);
                 pStatement.setString(4, userData.isbn);
-                userData.year_published = userData.year_published.replaceAll(",", "");
-                pStatement.setString(5, userData.year_published);
-                userData.price = userData.price.substring(1, userData.price.length());
-                pStatement.setString(6, userData.price);
+                if(userData.year_published.equals("")){
+                    pStatement.setString(5, "0");
+                } else {
+                    userData.year_published = userData.year_published.replaceAll(",", "");
+                    pStatement.setString(5, userData.year_published);
+                }
+                if(userData.price.equals("")){
+                    pStatement.setString(6, "0");
+                } else {
+                    userData.price = userData.price.substring(1, userData.price.length());
+                    pStatement.setString(6, userData.price);
+                }
                 
                 System.out.println("Ready to execute the insert");
                 
@@ -63,11 +75,18 @@ public class TableModifications {
 
         // Validation
         errorMsgs.title = ValidationUtils.stringValidationMsg(inputData.title, 200, true);
-        errorMsgs.image_url = ValidationUtils.stringValidationMsg(inputData.image_url, 200, true);
+        if(!errorMsgs.image_url.equals("")){
+            errorMsgs.image_url = ValidationUtils.stringValidationMsg(inputData.image_url, 200, true);
+        }
         errorMsgs.author = ValidationUtils.stringValidationMsg(inputData.author, 200, true);
         errorMsgs.isbn = ValidationUtils.stringValidationMsg(inputData.isbn, 200, true);
-        errorMsgs.year_published = ValidationUtils.stringValidationMsg(inputData.year_published, 200, true);
-        errorMsgs.price = ValidationUtils.stringValidationMsg(inputData.price, 200, true);
+        if(!errorMsgs.year_published.equals("")){
+            errorMsgs.year_published = ValidationUtils.stringValidationMsg(inputData.year_published, 200, true);
+
+        }
+        if(!errorMsgs.price.equals("")){
+            errorMsgs.price = ValidationUtils.stringValidationMsg(inputData.price, 200, true);
+        }
 
         return errorMsgs;
     }
@@ -107,13 +126,25 @@ public class TableModifications {
                 PrepStatement statement = new PrepStatement(dbc, sql);
                 
                 statement.setString(1, userData.title);
-                statement.setString(2, userData.image_url);
+                if(userData.image_url.equals("")){
+                    statement.setString(2, "");
+                } else {
+                    statement.setString(2, userData.image_url);
+                }
                 statement.setString(3, userData.author);
                 statement.setString(4, userData.isbn);
-                userData.year_published = userData.year_published.replaceAll(",", "");
-                statement.setString(5, userData.year_published);
-                userData.price = userData.price.substring(1, userData.price.length());
-                statement.setString(6, userData.price);
+                if(userData.year_published.equals("")){
+                    statement.setString(5, "0");
+                } else {
+                    userData.year_published = userData.year_published.replaceAll(",", "");
+                    statement.setString(5, userData.year_published);
+                }
+                if(userData.price.equals("")){
+                    statement.setString(6, "0");
+                } else {
+                    userData.price = userData.price.substring(1, userData.price.length());
+                    statement.setString(6, userData.price);
+                }
                 statement.setString(7, userData.id);
                 
                 int numRows = statement.executeUpdate();

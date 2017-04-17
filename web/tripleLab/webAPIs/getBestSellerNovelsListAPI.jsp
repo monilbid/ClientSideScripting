@@ -7,7 +7,16 @@
 <%@page language="java" import="com.google.gson.*" %>
 
 <%
+    
+    System.out.println("Before setting login to false");
+    if(session.getAttribute("login") == null){
+        System.out.println("Setting login to false");
+        session.setAttribute("login", "false");
+    }
+    System.out.println("session attribute login = " + session.getAttribute("login"));
+    System.out.println("After setting login to false");
 
+    
     StringDataList list = new StringDataList();
 
     DbConn dbc = new DbConn();
