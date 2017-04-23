@@ -5,7 +5,7 @@
 --%>
 
 <%@page import="view.NovelView"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="application/json" pageEncoding="UTF-8"%>
 
 <%@page language="java" import="dbUtils.*" %>
 <%@page language="java" import="model.BestsellerNovel.*" %>

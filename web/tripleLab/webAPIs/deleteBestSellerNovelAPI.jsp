@@ -26,12 +26,12 @@
     } else if (session.getAttribute("login") != null){
         if(session.getAttribute("login").equals("false")){
             book.errorMsg = "User not Logged In"; 
-        }
-    } else {
-        book.errorMsg = dbc.getErr();
-        if (book.errorMsg.length() == 0) { // means db connection is ok
-            //System.out.println("personDelete.jsp ready to delete id "+deleteId);
-            book.errorMsg = TableModifications.deleteById(deleteId, dbc);
+        }  else {
+            book.errorMsg = dbc.getErr();
+            if (book.errorMsg.length() == 0) { // means db connection is ok
+                //System.out.println("personDelete.jsp ready to delete id "+deleteId);
+                book.errorMsg = TableModifications.deleteById(deleteId, dbc);
+            }
         }
     }
     System.out.println("result of that delete is: "+book.errorMsg+"(empty string means worked)");
